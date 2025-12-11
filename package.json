@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ts-node build-lambda.ts",
+    "tf:init": "cd infra && terraform init",
     "tf:validate": "cd infra && terraform validate",
     "tf:fmt": "cd infra && terraform fmt",
     "tf:plan": "cd infra && terraform plan",
