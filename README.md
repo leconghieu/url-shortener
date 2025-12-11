@@ -1,6 +1,6 @@
 # URL Shortener Service (AWS Serverless / Terraform / Typescript)
 
-A simple URL shortener built with Typescript, Terraform, AWS.
+A serverless URL shortening backend with AWS that can be deployed end-to-end using Terraform in minutes.
 
 ## Tech Stack
 - **TypeScript**
@@ -50,9 +50,32 @@ npm tf:apply
 After successfully running `npm tf:apply`, the api endpoint would be shown as below:
 ![plot](./images/api_endpoint.png)
 
-Then you can use Postman to send a POST request like this to the endpoint `https://<api_key>.execute-api.eu-central-1.amazonaws.com/shorten` and get this reponse.
+Then you can use Postman to send a POST request like this to the endpoint `https://<api_key>.execute-api.eu-central-1.amazonaws.com/shorten`.
+
+Example 
+```bash
+POST /shorten HTTP/1.1
+Content-Type: application/json
+
+{
+  "url": "https://example.com/very/long/url"
+}
+```
+→ Response:
+```bash
+{
+  "short_url": "https://<api>.execute-api.eu-central-1.amazonaws.com/abc123"
+}
+```
+
 ![plot](./images/postman_result.png)
 
 You can now access the `short_url`, It will automatically redirect to the real `url` you created above.
 
-API endpoint: https://9x1xu4ptka.execute-api.eu-central-1.amazonaws.com/shorten
+API endpoint(for testing): https://9x1xu4ptka.execute-api.eu-central-1.amazonaws.com/shorten
+
+## To Improve
+- Use shorter custom domain instead of the long API Gateway endpoint.
+- Add unit tests.
+- Add ESLint + Prettier CI checks before deployment.
+- Add rate limiting and security enhancements.
