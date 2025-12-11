@@ -1,0 +1,30 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ts-node build-lambda.ts",
+    "tf:validate": "cd infra && terraform validate",
+    "tf:fmt": "cd infra && terraform fmt",
+    "tf:plan": "cd infra && terraform plan",
+    "tf:apply": "cd infra && terraform apply -auto-approve",
+    "tf:destroy": "cd infra && terraform destroy -auto-approve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.947.0",
+    "@aws-sdk/lib-dynamodb": "^3.948.0",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "esbuild": "^0.27.1",
+    "globals": "^16.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
