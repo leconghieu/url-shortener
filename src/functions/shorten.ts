@@ -1,10 +1,10 @@
+import { APIGatewayEvent } from "aws-lambda";
 import { nanoid } from "nanoid";
 import { isUrlValid } from "../utils/validation";
 import { extractUrl } from "../utils/helpers"; 
 import { saveUrl } from "../db/urlRepository";
 
- 
-export const handler = async (event: any) => {
+export const handler = async (event: APIGatewayEvent) => {
     try {
         const url = extractUrl(event);
 

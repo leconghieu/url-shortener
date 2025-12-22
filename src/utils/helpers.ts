@@ -1,5 +1,6 @@
- 
-export const extractUrl = (event: any): string => {
+import { APIGatewayEvent } from "aws-lambda";
+
+export const extractUrl = (event: APIGatewayEvent): string => {
     if (!event.body) {
         return "";
     }
@@ -12,4 +13,3 @@ export const extractUrl = (event: any): string => {
         return "";
     }
 }
- 

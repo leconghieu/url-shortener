@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "npm install && cd infra && terraform init",
     "build": "ts-node build-lambda.ts",
-    "tf:init": "cd infra && terraform init",
-    "tf:validate": "cd infra && terraform validate",
-    "tf:fmt": "cd infra && terraform fmt",
-    "tf:plan": "cd infra && terraform plan",
-    "tf:apply": "cd infra && terraform apply -auto-approve",
+    "tf:deploy": "cd infra && terraform apply -auto-approve",
     "tf:destroy": "cd infra && terraform destroy -auto-approve"
   },
   "keywords": [],
@@ -22,6 +19,7 @@
     "nanoid": "^5.1.6"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.159",
     "@types/node": "^24.10.2",
     "esbuild": "^0.27.1",
     "globals": "^16.5.0",

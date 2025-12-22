@@ -31,18 +31,14 @@ A serverless URL shortening backend with AWS that can be deployed end-to-end usi
 Clone the repo
 > git clone https://github.com/leconghieu/url-shortener.git
 
-Install dependencies
+Install dependencies and and init infra
 > npm install
 
 Build and zip lambda functions
 > npm run build
 
 Deploy
-```bash
-npm tf:init
-npm tf:plan
-npm tf:apply
-```
+> npm run tf:deploy
 
 ## How to test
 > 💡 If you don’t want to deploy the infrastructure, you can test using the example `api_endpoint` below.

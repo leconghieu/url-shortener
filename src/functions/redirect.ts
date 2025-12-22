@@ -1,7 +1,7 @@
+import { APIGatewayEvent } from "aws-lambda";
 import { getUrl } from "../db/urlRepository";
 
- 
-export const handler = async (event: any) => {
+export const handler = async (event: APIGatewayEvent) => {
     try {
         const code = event.pathParameters?.code || '';
 
@@ -34,4 +34,3 @@ export const handler = async (event: any) => {
         }
     }
 }
- 
